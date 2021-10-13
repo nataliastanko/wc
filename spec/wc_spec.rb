@@ -3,7 +3,7 @@
 require_relative '../lib/wc'
 
 RSpec.describe WC do
-  subject(:wc) { described_class.new('text.txt') }
+  subject(:wc) { described_class.new('data/text.txt') }
 
   it 'returns the number of the lines in a file' do
     expect(wc.lines).to eq(13)
@@ -17,12 +17,16 @@ RSpec.describe WC do
     expect(wc.chars).to eq(3090)
   end
 
-  it 'returns wc output' do
+  it 'returns wc stats' do
     hash = {
       lines: 13,
       words: 511,
       chars: 3090
     }
-    expect(wc.output).to eq(hash)
+    expect(wc.stats).to eq(hash)
+  end
+
+  it 'returns wc output' do
+    expect(wc.output).to eq('13 511 3090')
   end
 end

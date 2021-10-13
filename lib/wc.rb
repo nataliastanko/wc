@@ -3,6 +3,8 @@
 ##
 # Class imitating wc console command
 class WC
+  attr_reader :lines, :words, :chars
+
   def initialize(filename)
     @filename = filename
     @lines = 0
@@ -11,12 +13,16 @@ class WC
     @file = readfile
   end
 
-  def output
+  def stats
     {
       lines: lines,
       words: words,
       chars: chars
     }
+  end
+
+  def output
+    stats.values.join(' ')
   end
 
   private

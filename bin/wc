@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/wc'
+
+puts WC.new('data/text.txt').output
