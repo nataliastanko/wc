@@ -7,6 +7,7 @@ class WC
 
   def initialize(filename)
     @filename = filename
+    raise_file_error
     @lines = 0
     @words = 0
     @chars = 0
@@ -26,6 +27,10 @@ class WC
   end
 
   private
+
+  def raise_file_error
+    raise ArgumentError, 'File does not exist' unless File.exist?(@filename)
+  end
 
   def readfile
     File.open(@filename).each do |line|

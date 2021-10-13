@@ -21,8 +21,3 @@ For the wc line is what ends with the "\n" char
 
     rubocop
     rspec
-
-## TODO
-
-- make to work with any file, create filename as param for ./bin/wc
-- test if file exist

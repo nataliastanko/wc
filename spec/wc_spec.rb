@@ -5,6 +5,13 @@ require_relative '../lib/wc'
 RSpec.describe WC do
   subject(:wc) { described_class.new('data/text.txt') }
 
+  context 'file does not exist' do
+    it 'returns error if file does' do
+      expect(wc.lines).to eq(13)
+      expect { described_class.new('data/hello.txt') }.to raise_error(ArgumentError)
+    end
+  end
+
   it 'returns the number of the lines in a file' do
     expect(wc.lines).to eq(13)
   end
