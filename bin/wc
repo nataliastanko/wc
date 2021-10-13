@@ -2,4 +2,4 @@
 
 require_relative '../lib/wc'
 
-puts WC.new('data/text.txt').output
+puts WC.new(ARGV[0]).output
